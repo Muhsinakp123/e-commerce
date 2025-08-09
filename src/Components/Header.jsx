@@ -20,7 +20,7 @@ const Header = () => {
             <button className='search-btn'>
               <i className="fa fa-search"></i>
             </button>
-            <button className='login-btn'>Login</button>
+            <Link to={'/login'}><button className='login-btn'>Login</button></Link>
           </div>
         </div>
       </header>

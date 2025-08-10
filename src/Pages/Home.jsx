@@ -4,10 +4,10 @@ import HomeBanner from '../Components/HomeBanner';
 
 function Home() {
   return (
-      <main>
+      <header>
         <Header/>
         <HomeBanner/>
-      </main>
+      </header>
   );
 }
 

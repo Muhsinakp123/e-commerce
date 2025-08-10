@@ -12,6 +12,9 @@ ul {
     display: flex;
     gap: 50px;
 }
+.list-items span:hover {
+    color: rgb(244, 89, 89);
+}
 .list-items span {
     color: black;
 }
@@ -43,11 +46,6 @@ ul {
     font-weight: bold;
     cursor: pointer;
     border-radius: 3px;
-}
-.fa {
-    display: inline-block;
-    font: normal normal normal 14px / 1 FontAwesome;
-    font-size: inherit;
 }
 
 /* ---header end--- */
@@ -128,3 +126,5 @@ ul {
     background-color: rgb(244, 89, 89);
     color: antiquewhite
 }
+
+/* ---home banner end--- */

@@ -1,13 +1,19 @@
+import { useEffect } from 'react';
+import Footer from '../Components/Footer';
 import Header from '../Components/Header';
 import HomeBanner from '../Components/HomeBanner';
-// import './App.css';
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
+
+  
+
   return (
-      <header>
-        <Header/>
+    <>
+       
         <HomeBanner/>
-      </header>
+    
+    </>
   );
 }
 

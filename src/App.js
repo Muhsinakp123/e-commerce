@@ -10,11 +10,18 @@ import SignUp from './Pages/SignUp';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Shop from './Pages/Shop';
+import ProtectRoutes from './hooks/ProtectRoutes';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+import 'react-dropdown/style.css';
 
 function App() {
   return (
     <main>
       <BrowserRouter>
+      <ProtectRoutes/>
+       <Header/>
+       <main>
          <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/about' element={<About/>}/>
@@ -23,6 +30,8 @@ function App() {
           <Route path='/login' element={<Login/>}/>
           <Route path='/signup' element={<SignUp/>}/>
          </Routes>
+       </main>
+        <Footer/>
       </BrowserRouter>
     </main>
   );

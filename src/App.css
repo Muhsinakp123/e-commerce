@@ -47,7 +47,7 @@ table {
     --item-bg: #EEE;
     --item-border: #D6D6D6;
     --shadow: rgba(0, 0, 0, 0.1);
-    --submit-shadow: rgba(33, 85, 205, 0.25);
+    --submit-shadow: rgba(33, 85, 205, 0.25);   
 }
 
 * {

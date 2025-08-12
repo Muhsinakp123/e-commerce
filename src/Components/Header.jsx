@@ -1,9 +1,60 @@
-import { Link } from 'react-router-dom'
-import '../Styles/Home.css'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import '../Styles/Header.css'
+import { useEffect, useState } from 'react'
+import { width } from '@fortawesome/free-solid-svg-icons/fa0'
+import { getFromLocalStorage } from '../utils/helpers'
+import Dropdown from 'react-dropdown';
+
 
 const Header = () => {
+
+    const location = useLocation()
+    const navigator = useNavigate()
+
+  const handleLogout = () => {
+    window.localStorage.clear()
+    setIsLoggedIn(false);
+    setLogout(true);
+    // redirect to login page
+
+    navigator('/login')
+    
+  }
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  const [hidden, setHidden] = useState(false)
+  const [isLogout, setLogout] = useState(false)
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+
+
+
+  useEffect(()=> {
+    // console.log(location.pathname, 'aaa')
+    const token = getFromLocalStorage('access_token')
+
+    if (!token) {
+      setIsLoggedIn(false)
+    } else {
+      setIsLoggedIn(true)
+    }
+  }, [location.pathname])
+
+  useEffect(()=> {
+    if (location.pathname === '/login'  || location.pathname === '/signup') {
+      setHidden(true)
+    } else {
+      setHidden(false)
+    }
+  }, [location.pathname])
+
+  const options = [
+    <button onClick={handleLogout}>Logout</button>,
+    <Link to='/profile  '>Profile</Link>
+  ];
+
     return (
-      <header>
+      <header style={{ display: hidden ? 'none' : '', position: 'relative'}}>
         <div className='header-content container'>
           <div className='header-img'>
             <img src='/images/logo.png' alt='logo'/>
@@ -20,13 +71,45 @@ const Header = () => {
             <button className='search-btn'>
               <i className="fa fa-search"></i>
             </button>
-            <Link to={'/login'}><button className='login-btn'>Login</button></Link>
-          </div>
-        </div>
+            <div className='header-profile-icon'>
+            <button className='profile-icon' onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+              <i class="fa-solid fa-circle-user"></i>
+            </button>
+            {isDropdownOpen && (
+              <div className="profile-dropdown">
+                <Link to="/profile" className="dropdown-item">
+                <i className="fa fa-user"></i> Profile
+                </Link>
+                <Link to="/wishlist" className="dropdown-item">
+                <i className="fa fa-heart"></i> Wishlist
+                </Link>
+                <Link to="/messages" className="dropdown-item">
+                <i className="fa fa-envelope"></i> Messages
+                </Link>
+                <Link to="/settings" className="dropdown-item">
+                <i className="fa fa-cog"></i> Settings
+                </Link>
+                {isLoggedIn && (
+                  <>
+                  <button onClick={handleLogout} className="dropdown-item logout-btn">
+                    <i className="fa fa-sign-out"></i> Logout
+                  </button>
+                  {isLogout && location.pathname !== '/login' && <Link to={'/login'}></Link>}
+                </>
+                )}
+
+              </div>
+            )}
+            </div>
+            { !isLoggedIn && location.pathname !== '/login' && <Link to={'/login'}></Link> }
+            </div>
+      </div>
       </header>
     )
 }
 
 export default Header
+
+
 
 

@@ -2,6 +2,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const SignUpForm = () => {
 
@@ -66,9 +67,7 @@ const handleInputChange = (e) => {
         <span className="checkbox-cover" />
         <span className="checkbox-name"> Remember Me </span>
       </label>
-      <button type="submit" className="submit-btn btn">
-        Continue
-      </button>
+      <button type="submit" className="submit-btn btn">Submit</button>
       <Toaster/>
     </form>
     )

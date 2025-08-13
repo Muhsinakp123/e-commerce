@@ -2,10 +2,10 @@
 
 /* ---footer start--- */
 
-footer {
+#top-footer {
     background-color:#111 ;
 }
-.footer {
+.footer-top {
     display: flex;
     justify-content: space-between;
     color:#d6d6d6 ;
@@ -13,24 +13,80 @@ footer {
     gap: 50px;
 }
 
-.footer h4 {
+.footer-top h4 {
     color:rgb(244, 89, 89) ;
     font-size: 20px;
     letter-spacing: 1px;
     margin-bottom: 20px;
 }
 
-.footer li {
+.footer-top li {
     font-size: 16px;
 }
-.footer div {
+.footer-top div {
     line-height: 2;
 }
 
-input {
-    border: none;
-    border-radius: 3px;
-    color: #777;
-    padding: 10px 35px;
-    
+.news-letter {
+    display: flex;
+    margin-top: 15px;
 }
+
+.news-letter input {
+    flex: 1;
+    border: none;
+    border-radius: 3px 0 0 3px;
+    color: #777;
+    padding: 10px 25px;
+    min-height: 50px;
+    border: none;
+    outline: none;
+}
+.email-submit {
+    width: 60px;
+    min-height: 50px;
+    background-color: rgb(244, 89, 89);
+    color: white;
+    border: none;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+}
+#bottom-footer {
+    background-color: black;
+    padding: 30px 0px 30px 0px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.bottom-btn {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.footer-btn {
+    background-color:black ;
+    border: 1px solid #d6d6d6;
+    border-radius: 50%;
+    color: #d6d6d6;
+    display: inline-block;
+    font-size: 14px;
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+}
+.footer-btn:hover {
+    background-color:rgb(244, 89, 89) ;
+}
+#bottom-footer p {
+    color: #d6d6d6;
+    font-size: 14px;
+}
+
+#bottom-footer img {
+    max-width: 146px;
+}
+
+/* ---footer end--- */

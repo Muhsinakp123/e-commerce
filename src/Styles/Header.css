@@ -38,6 +38,63 @@ ul {
     cursor: pointer;
 }
 
+
+.search-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.search-modal {
+  position: relative;
+}
+
+.search-input {
+  color: #777;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 180%;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.search-submit {
+    position: absolute;
+    left: 314px;
+    top: 0px;
+    background: #ff4d6d;
+    border: none;
+    color: white;
+    padding: 19px 10px 20px 10px;
+    border-radius: 0px 3px 3px 0px;
+    cursor: pointer;
+    width: 55px;
+    height: 58px;
+}
+
+.close-search {
+  position: absolute;
+  top: -35px;
+  right: -176px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+
+
 .login-btn {
     border: none;
     background-color:  rgb(244, 89, 89);

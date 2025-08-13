@@ -1,0 +1,30 @@
+
+.box {
+    background-color: rgb(244, 89, 89);
+    padding: 50px;
+    color: antiquewhite;
+    font-size: 28px;
+}
+
+
+
+.responsive-map{
+    overflow: hidden;
+    padding-bottom: 26.3%;
+    position: relative;
+    height: 0;
+}
+
+.responsive-map iframe{
+    left: 0;
+    top: 0;
+    height: 400px;
+    width: 100%;
+    position: absolute;
+
+}
+iframe {
+    width: 600px;
+    height: 450px;  
+    border: none;
+}

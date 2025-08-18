@@ -27,6 +27,15 @@
     line-height: 2;
 }
 
+.info-serv {
+    display: flex;
+    gap: 50px;
+}
+.info-serv li:hover {
+    cursor: pointer;
+    color: rgb(244, 89, 89) ;
+}
+
 .news-letter {
     display: flex;
     margin-top: 15px;

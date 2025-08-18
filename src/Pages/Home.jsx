@@ -3,6 +3,9 @@ import Footer from '../Components/Footer';
 import Header from '../Components/Header';
 import HomeBanner from '../Components/HomeBanner';
 import { useNavigate } from 'react-router-dom';
+import Services from '../Components/Services';
+import Brand from '../Components/Brand';
+import ThreeCard from '../Components/ThreeCard';
 
 function Home() {
 
@@ -12,7 +15,11 @@ function Home() {
     <>
        
         <HomeBanner/>
-    
+        <ThreeCard/>
+        <Brand/>
+        <Services/>
+       
+        
     </>
   );
 }

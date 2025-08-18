@@ -83,7 +83,7 @@ const Header = () => {
       <header style={{ display: hidden ? 'none' : '', position: 'relative'}}>
         <div className='header-content container'>
           <div className='header-img'>
-            <img src='/images/logo.png' alt='logo'/>
+            <img src='/images/logo.webp' alt='logo'/>
           </div>
           <nav className='navbar'>
             <ul className='list-items'>
@@ -113,7 +113,7 @@ const Header = () => {
 
             <div className='header-profile-icon'>
             <button className='profile-icon' onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
-              <i class="fa-solid fa-circle-user"></i>
+              <i className="fa-solid fa-circle-user"></i>
             </button>
             {isDropdownOpen && (
               <div className="profile-dropdown">

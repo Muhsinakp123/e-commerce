@@ -25,11 +25,12 @@ const Footer = () => {
                     <div>
                         <h4>Contacts</h4>
                         <ul>
-                            <li><i class="fa-solid fa-location-dot"></i>4060 Reppert Coal Road Jackson,<br/>MS 39201 USA</li>
-                            <li><i class="fa-solid fa-mobile-retro"></i>(+123) 685 78<br/>(+064) 987 245</li>
-                            <li><i class="fa-solid fa-envelope"></i>contact@yoursite.com<br/>support@yoursite.com</li>
+                            <li><i className="fa-solid fa-location-dot"></i>4060 Reppert Coal Road Jackson,<br/>MS 39201 USA</li>
+                            <li><i className="fa-solid fa-mobile-retro"></i>(+123) 685 78<br/>(+064) 987 245</li>
+                            <li><i className="fa-solid fa-envelope"></i>contact@yoursite.com<br/>support@yoursite.com</li>
                         </ul>
                     </div>
+                    <div className='info-serv'>
                     <div>
                         <h4>Information</h4>
                         <ul>
@@ -50,13 +51,14 @@ const Footer = () => {
                             <li>Order History</li>
                         </ul>
                     </div>
+                    </div>
                     <div>
                         <h4>Join Us Newsletter</h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipisc<br/>ing elit. Aenean lobortis</p>
                         <form>
                             <div className='news-letter'>
                                 <input type='e-mail' name='e-mail' placeholder='Enter Your Email'/>
-                                <button type="submit" class="email-submit"><i class="fa fa-paper-plane"></i></button>
+                                <button type="submit" className="email-submit"><i className="fa fa-paper-plane"></i></button>
                             </div>
                         </form>
                     </div>
@@ -65,11 +67,11 @@ const Footer = () => {
             <section id='bottom-footer'>
                 <div className="footer-bottom container">
                     <div className='bottom-btn'>
-                        <button className='footer-btn'><i class="fa-brands fa-facebook-f"></i></button>
-                        <button className='footer-btn'><i class="fa-brands fa-pinterest"></i></button>
-                        <button className='footer-btn'><i class="fa-brands fa-linkedin-in"></i></button>
-                        <button className='footer-btn'><i class="fa-brands fa-twitter"></i></button>
-                        <button className='footer-btn'><i class="fa-brands fa-instagram"></i></button>
+                        <button className='footer-btn'><i className="fa-brands fa-facebook-f"></i></button>
+                        <button className='footer-btn'><i className="fa-brands fa-pinterest"></i></button>
+                        <button className='footer-btn'><i className="fa-brands fa-linkedin-in"></i></button>
+                        <button className='footer-btn'><i className="fa-brands fa-twitter"></i></button>
+                        <button className='footer-btn'><i className="fa-brands fa-instagram"></i></button>
                     </div>
                     <p>Copyright © 2023 RapidShop, All rights Reserved.</p>
                     <img src='/images/card.webp' alt='footer-img'/>

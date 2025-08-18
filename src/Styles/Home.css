@@ -78,3 +78,76 @@
 /* ---home banner end--- */
 
 
+/* ---three card section start--- */
+
+
+.card {
+    display: flex;
+}
+
+/* ---three card section end--- */
+
+
+/* ---brand section start--- */
+
+#brand {
+    background: #eeeeee;
+    
+}
+.brand-images {
+    display: flex;
+}
+
+.brand-images img {
+    max-width: 200px;
+    opacity: 0.7;
+}
+
+.brand-images img:hover {
+    opacity: 1;
+}
+
+/* ---brand section end--- */
+
+
+/* ---service section start--- */
+
+.highlights {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+    
+}
+
+.highlights div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 50%;
+    min-height: 150px;
+    padding: 25px;
+    border-radius: 3px;
+    background: #eeeeee;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, .02);
+}
+.highlights div i {
+    color: rgb(244, 89, 89);
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.highlights div h3 {
+    font-size: 18px;
+    font-weight: bold
+}
+.highlights div p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* ---service section end--- */
+

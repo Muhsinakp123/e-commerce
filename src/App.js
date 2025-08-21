@@ -14,6 +14,7 @@ import ProtectRoutes from './hooks/ProtectRoutes';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import 'react-dropdown/style.css';
+import AdminPage from './Pages/Admin';
 
 function App() {
   return (
@@ -29,6 +30,10 @@ function App() {
           <Route path='/contact' element={<Contact/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/signup' element={<SignUp/>}/>
+
+          {/* adming Routes */}
+          <Route path='/admin' element={<AdminPage/>}/>
+
          </Routes>
        </main>
         <Footer/>
@@ -38,3 +43,55 @@ function App() {
 }
 
 export default App;
+
+
+
+// import './App.css';
+// import Home from './Pages/Home';
+// import {
+//   BrowserRouter,
+//   Routes,
+//   Route
+// } from 'react-router-dom'
+// import Login from './Pages/Login';
+// import SignUp from './Pages/SignUp';
+// import About from './Pages/About';
+// import Contact from './Pages/Contact';
+// import Shop from './Pages/Shop';
+// import ProtectRoutes from './hooks/ProtectRoutes';
+// import Header from './Components/Header';
+// import Footer from './Components/Footer';
+// import 'react-dropdown/style.css';
+// import AdminPage from './Pages/Admin';
+
+// // 👇 import context
+// import { UserProvider } from './context/UserContext';
+
+// function App() {
+//   return (
+//     <main>
+//       <BrowserRouter>
+//         <UserProvider> {/* 👈 wrap whole app */}
+//           <ProtectRoutes/>
+//           <Header/>
+//           <main>
+//             <Routes>
+//               <Route path='/' element={<Home/>}/>
+//               <Route path='/about' element={<About/>}/>
+//               <Route path='/shop' element={<Shop/>}/>
+//               <Route path='/contact' element={<Contact/>}/>
+//               <Route path='/login' element={<Login/>}/>
+//               <Route path='/signup' element={<SignUp/>}/>
+//               {/* Admin Routes */}
+//               <Route path='/admin' element={<AdminPage/>}/>
+//             </Routes>
+//           </main>
+//           <Footer/>
+//         </UserProvider>
+//       </BrowserRouter>
+//     </main>
+//   );
+// }
+
+// export default App;
+

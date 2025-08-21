@@ -15,8 +15,8 @@ const LoginForm = () => {
   const navigator = useNavigate()
 
   const [formData, setFormData] = useState({
-    email: 'muhsinamusthafakp26@gmail.com',
-    password: 'Muhsina@123'
+    email: '',
+    password: ''
   })
 const handleInputChange = (e) => {
   
@@ -95,4 +95,11 @@ const handleInputChange = (e) => {
 }
 
 export default LoginForm
+
+
+
+
+
+
+
 

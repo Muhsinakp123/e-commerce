@@ -1,6 +1,20 @@
+import axios from "axios";
 import "../Styles/Contact.css";
 
 const Contact = () => {
+
+ const url = `https://docs.google.com/forms/d/e/1FAIpQLSfWGB49VKl6m41LOy94cLTrGjTljXW3Ft30Ck8n7JKUULYpzA/formResponse?usp=pp_url&entry.2005620554=Muhsina+Musthafa+K+P&entry.1045781291=muhsinamusthafakp26@gmail.com&entry.1065046570=Vadakara+&entry.839337160=E-commerce+Contact+Form` // Use formResponse endpoint for submission
+  const sendContact = async (e) => {
+
+    e.preventDefault()
+    // You should send a POST request to Google Forms, not GET
+    // Also, use a proxy if you are making a cross-origin request
+    // This is an example for sending a POST request to Google Forms
+    await axios.post(url).then(res=> {
+      console.log(res.data)
+    }).catch(err=> console.log(err))
+  }
+
   return (
     <>
       <section>
@@ -14,14 +28,14 @@ const Contact = () => {
         <div className="contact container">
           <div>
             <h2>Get in Touch</h2>
-            <form>
+            <form onSubmit={sendContact}>
               <div className="name-email">
                 <input type="text" name="name" id="name" placeholder="Name*" />
                 <input type="email" name="email" id="e-mail" placeholder="Email*"/>
               </div>
               <input type="text" name="subject" id="subject" placeholder="Subject"/>
               <textarea name="message" id="message" placeholder="Message"></textarea>
-              <button className="contact-btn">Send Message</button>
+              <button className="contact-btn" type="submit">Send Message</button>
             </form>
           </div>
           <div>

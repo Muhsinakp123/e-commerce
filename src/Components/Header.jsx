@@ -98,7 +98,7 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-        <div className="header-icon">
+        {/* <div className="header-icon">
           <button className="search-btn" onClick={() => setIsSearchOpen(true)}>
             <i className="fa fa-search"></i>
           </button>
@@ -122,7 +122,44 @@ const Header = () => {
                 </button>
               </div>
             </div>
+          )} */}
+
+        <div className="header-icon">
+          {/* Search button only visible on Shop page */}
+          {location.pathname.startsWith("/shop") && (
+            <button
+              className="search-btn"
+              onClick={() => setIsSearchOpen(true)}
+            >
+              <i className="fa fa-search"></i>
+            </button>
           )}
+
+          {/* Search modal also only for Shop page */}
+          {isSearchOpen && location.pathname.startsWith("/shop") && (
+            <div className="search-modal-overlay">
+              <div className="search-modal">
+                <button
+                  className="close-search"
+                  onClick={() => setIsSearchOpen(false)}
+                >
+                  ✕
+                </button>
+                <input
+                  type="text"
+                  placeholder="Enter Keyword"
+                  className="search-input"
+                />
+                <button className="search-submit">
+                  <i className="fa fa-search"></i>
+                </button>
+              </div>
+            </div>
+          )}
+
+          <button className="cart">
+            <Link to="/cart"><i className="fa-solid fa-cart-shopping"></i></Link>
+          </button>
 
           <div className="header-profile-icon">
             <button
@@ -173,13 +210,10 @@ const Header = () => {
 
 export default Header;
 
-
-
 // import { useState, useContext, useEffect } from "react";
 // import { Link, useLocation, useNavigate } from "react-router-dom";
 // import { UserContext } from "../context/UserContext";
 // import "../Styles/Header.css";
-
 
 // const Header = () => {
 //   const { user, isLoggedIn, handleLogout } = useContext(UserContext);

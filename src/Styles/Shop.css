@@ -1,0 +1,9 @@
+.filter-value {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+    padding-left: 30px;
+}
+.filter-value label {
+    color: #9f9f9f;
+}

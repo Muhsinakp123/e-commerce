@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { getFromLocalStorage } from "../utils/helpers"
+import AdminDashboard from "../Components/AdminDashboard"
 
 const AdminPage = () => {
 
@@ -12,10 +13,10 @@ const AdminPage = () => {
 
     if (!role) {
 
-        return <p>Access denied</p>
+        return <p>admni</p>
     } else if (role === 'admin') {
 
-        return <p>Admin page</p>
+        return <AdminDashboard/>
     } else {
 
         return <p>Unauthorized user</p>

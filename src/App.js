@@ -21,7 +21,7 @@ function App() {
     <main>
       <BrowserRouter>
       <ProtectRoutes/>
-       <Header/>
+       {/* <Header/> */}
        <main>
          <Routes>
           <Route path='/' element={<Home/>}/>
@@ -36,7 +36,7 @@ function App() {
 
          </Routes>
        </main>
-        <Footer/>
+        {/* <Footer/> */}
       </BrowserRouter>
     </main>
   );

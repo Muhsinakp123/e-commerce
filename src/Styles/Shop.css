@@ -1,3 +1,5 @@
+@import url(../Styles/Product.css);
+
 .filter-value {
     display: flex;
     gap: 10px;

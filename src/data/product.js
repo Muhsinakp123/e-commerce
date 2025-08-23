@@ -1,18 +1,18 @@
 export const products = [
   {
     id: 1,
-    title: "Crop Top",
+    category: "Crop Top",
     price: 25.0,
     oldPrice: 35.0,
     img: "/images/p1.webp",
     badge: "Sale",
     sale: true,
     bestseller: true,
-    featured: false
+    featured: false,
   },
   {
     id: 2,
-    title: "T-Shirt",
+    category: "T-Shirt",
     price: 10.0,
     oldPrice: 16.0,
     img: "/images/p2.webp",
@@ -23,8 +23,8 @@ export const products = [
   },
   {
     id: 3,
-    title: "Top",
-    price: 27.0,
+    category: "Top",
+    price: 57.0,
     oldPrice: 35.0,
     img: "/images/p3.webp",
     badge: "Sale",
@@ -34,7 +34,7 @@ export const products = [
   },
   {
     id: 4,
-    title: "Shirt",
+    category: "Shirt",
     price: 16.0,
     oldPrice: 20.0,
     img: "/images/p4.webp",
@@ -45,8 +45,8 @@ export const products = [
   },
   {
     id: 5,
-    title: "Western Top",
-    price: 15.0,
+    category: "Western Top",
+    price: 55.0,
     oldPrice: 25.0,
     img: "/images/p3.webp",
     badge: "Sale",
@@ -56,7 +56,7 @@ export const products = [
   },
   {
     id: 6,
-    title: "Shirt",
+    category: "Shirt",
     price: 12.0,
     oldPrice: 20.0,
     img: "/images/p4.webp",
@@ -67,8 +67,8 @@ export const products = [
   },
   {
     id: 7,
-    title: "Formal Shirt",
-    price: 20.0,
+    category: "Formal Shirt",
+    price: 50.0,
     oldPrice: 30.0,
     img: "/images/p1.webp",
     badge: "New",
@@ -78,8 +78,8 @@ export const products = [
   },
   {
     id: 8,
-    title: "T-Shirt",
-    price: 16.0,
+    category: "T-Shirt",
+    price: 36.0,
     oldPrice: 20.0,
     img: "/images/p2.webp",
     badge: "-60%",

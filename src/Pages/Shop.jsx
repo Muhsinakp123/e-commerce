@@ -1,14 +1,57 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import productData, { products } from "../data/product";
 import "../Styles/Shop.css";
+import { label } from "framer-motion/client";
+import Products from "../Components/Products";
+import ProductCard from "../Components/ui/ProductCard";
 
 function Shop() {
   const [productList, setProductList] = useState(products);
-  const [sortBy, setSortBy] = useState("All");
+
+  const priceOptions = [
+    { value: "20", label: "Under $20" },
+    { value: "40", label: "Under $40" },
+  ];
+
+  const category = [
+    { value: "shirt", label: "Shirt" },
+    { value: "top", label: "Top" },
+    { value: "crop-top", label: "Crop Top" },
+    { value: "t-shirt", label: "T-Shirt" },
+    { value: "formal-top", label: "Formal Top" },
+    { value: "western-top", label: "Western Top" },
+  ];
+
+
   
-  const handleSortChange = (e) => {
-    setSortBy(e.target.value);
+  const [filterOptions, setFilterOptions] = useState({
+    priceOptions: "",
+    category: "",
+  });
+
+   
+
+  const handleFilterChange = (type, value) => {
+    // console.log(type, value, 'from filter');
+    setFilterOptions((prev) => ({ ...prev, [type]: value }));
   };
+
+  const [currentItems, setCurrentItems] = useState(products)
+
+  useEffect(() => {
+    let productList = products;
+    if (filterOptions.category) {
+      productList = productList.filter(
+        (item) => item.category === filterOptions.category
+      );
+    }
+    if (filterOptions.priceOptions) {
+      productList = productList.filter(
+        (item) => item.price < filterOptions.priceOptions
+      );
+    }
+    setCurrentItems(productList);
+  }, [filterOptions]);
 
   return (
     <>
@@ -20,47 +63,35 @@ function Shop() {
         </div>
       </section>
       <div className="filter-value container">
-        <label className="sort">Sort By:</label>
-        <select value={sortBy} onChange={handleSortChange}>
-          <option value="all">All</option>
-          <option value="name-desc">Name Descending</option>
-          <option value="price-desc">Price Descending</option>
+        <label className="sort">Sort By Price:</label>
+        <select
+          onChange={(e) => handleFilterChange("priceOptions", e.target.value)}
+        >
+          <option value="" selected>
+            All Price
+          </option>
+          {priceOptions.map((item) => (
+            <option value={item.value}>{item.label}</option>
+          ))}
         </select>
-      </div>
-      <div className="products-grid container">
-        {productList.map((product, idx) => (
-          <div className="product-card" key={idx}>
-            {" "}
-            <div className="badge">{product.badge}</div>
-            <img src={product.img} alt={product.title} />
-            <div className="icons">
-              <button data-tooltip="Quick View">
-                <i className="fas fa-search"></i>
-              </button>
-              <button data-tooltip="Add to Wishlist">
-                <i className="fas fa-heart"></i>
-              </button>
-              <button data-tooltip="Add to Cart">
-                <i className="fas fa-shopping-cart"></i>
-              </button>
-            </div>
-            <div className="product-info">
-              <h4>{product.title}</h4>
-              <div className="price-section">
-                <div className="price">${product.price.toFixed(2)}</div>
-                <div className="old-price">${product.oldPrice.toFixed(2)}</div>
-              </div>
-              <div className="stars">
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star-half-alt"></i>
-              </div>
-            </div>
+        <label className="category">Category</label>
+        <select
+          onChange={(e) => handleFilterChange("category", e.target.value)}
+        >
+          <option value="" selected>
+            All categories
+          </option>
+          {products.map((item) => (
+            <option value={item.category}>{item.category}</option>
+          ))}
+        </select>
+       
+        </div>
+        <div className="products-grid container">
+          {
+            currentItems.map((item, idx) => <ProductCard product={item} key={idx}/>)
+          }
           </div>
-        ))}
-      </div>
     </>
   );
 }

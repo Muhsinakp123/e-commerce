@@ -1,4 +1,11 @@
+import { Link, useNavigate } from "react-router-dom";
+
 const HomeBanner = () => {
+
+    const navigate = useNavigate();
+    const handleButtonClick = () => {
+        navigate('/shop'); 
+      };
     return (
         <section id="home">
             <div className="banner">
@@ -11,8 +18,8 @@ const HomeBanner = () => {
                     <h1>BEST SHOPPING</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae posuere est. Sed placerat ligula.</p>
                     <div className="home-buttons">
-                        <button className="active-button">Shop Now</button>
-                        <button className="non-active">Collection</button>
+                        <button className="active-button" onClick={handleButtonClick}>Shop Now</button>
+                        <button className="non-active" onClick={handleButtonClick}>Collection</button>
                     </div>
                 </div>
             </div>

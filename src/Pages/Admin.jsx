@@ -13,7 +13,7 @@ const AdminPage = () => {
 
     if (!role) {
 
-        return <p>admni</p>
+        return <p>admin</p>
     } else if (role === 'admin') {
 
         return <AdminDashboard/>

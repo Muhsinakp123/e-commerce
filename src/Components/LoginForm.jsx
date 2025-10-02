@@ -15,8 +15,8 @@ const LoginForm = () => {
   const navigator = useNavigate()
 
   const [formData, setFormData] = useState({
-    email: '',
-    password: ''
+    email: 'muhsinamusthafakp26@gmail.com',
+    password: 'Muhsina@123'
   })
 const handleInputChange = (e) => {
   

@@ -1,7 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "../Styles/Header.css";
-import { useEffect, useRef, useState } from "react";
-import { width } from "@fortawesome/free-solid-svg-icons/fa0";
+import { useEffect, useState } from "react";
+// import { width } from "@fortawesome/free-solid-svg-icons/fa0";
 import { getFromLocalStorage } from "../utils/helpers";
 
 
@@ -168,17 +168,17 @@ const Header = () => {
 
   
 
-  useEffect(() => {
-    if (location.pathname === "/login" || location.pathname === "/signup"  ) {
-      setHidden(true);
-      setIsAdmin(false)
-    } else if (location.pathname === '/admin') {
-      setHidden(true)
-      setIsAdmin(true)
-    } else {
-      setHidden(false);
-    }
-  }, [location.pathname]);
+  // useEffect(() => {
+  //   if (location.pathname === "/login" || location.pathname === "/signup"  ) {
+  //     setHidden(true);
+  //     setIsAdmin(false)
+  //   } else if (location.pathname === '/admin') {
+  //     setHidden(true)
+  //     setIsAdmin(true)
+  //   } else {
+  //     setHidden(false);
+  //   }
+  // }, [location.pathname]);
 
   useEffect(() => {
     setIsDropdownOpen(false);

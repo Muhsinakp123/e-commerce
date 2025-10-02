@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import "../Styles/Product.css";
 import { products } from "../data/product";
 import ProductCard from "./ui/ProductCard";
@@ -27,16 +27,14 @@ const Products = () => {
   //   }
   // };
 
-  const handleTabChange = (value) => {
+  const handleTabChange = useCallback((value) => {
     setActiveTab(value);
-    //  console.log(value, ":  value")
-    //  console.log(activeTab, ":  active tab")
 
     if (value !== "all")
       setProductList(products.filter((product) => product[value] === true));
     if (value === "all") setProductList(products);
-  };
-
+  },[]);
+  
   return (
     <section id="products-section">
       <h5>Check Our All Products</h5>

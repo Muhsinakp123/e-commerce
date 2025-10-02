@@ -2,13 +2,23 @@ import { useEffect, useState } from 'react'
 import '../Styles/Footer.css'
 import { useLocation } from 'react-router-dom'
 
+const Footer = () => {
 
 
-const UserFooter = ({hidden}) => {
+    
+//   const [hidden, setHidden] = useState(false)
+//   const location = useLocation()
+//   useEffect(()=> {
+//       if (location.pathname === '/login'  || location.pathname === '/signup') {
+//         setHidden(true)
+//       } else {
+//         setHidden(false)
+//       }
+//     }, [location.pathname])
+  
 
-
-     return (
-        <footer style={{ display: hidden ? 'none' : ''}}>
+    return (
+        <footer>
             <section id='top-footer'> 
                 <div className="footer-top container">
                     <div>
@@ -70,42 +80,4 @@ const UserFooter = ({hidden}) => {
     )
 }
 
-
-
-const AdminFooter  = () => {
-
-  return <div>Admin Footer</div>
-}
-
-const Footer = () => {
-
-  const [hidden, setHidden] = useState(false)
-  const location = useLocation()
-
-
-  useEffect(() => {
-    if (location.pathname === "/login" || location.pathname === "/signup"  ) {
-      setHidden(true);
-      setIsAdmin(false)
-    } else if (location.pathname === '/admin') {
-      setHidden(true)
-      setIsAdmin(true)
-    } else {
-      setHidden(false);
-    }
-  }, [location.pathname]);
-
-  
-  const [isAdmin, setIsAdmin] = useState(false)
-  const userFooterProps = ({hidden}) 
-
-  if (isAdmin) {
-
-    return <AdminFooter/>
-  } else {
-
-    return <UserFooter {...userFooterProps}/>
-  }
-};
-   
 export default Footer
